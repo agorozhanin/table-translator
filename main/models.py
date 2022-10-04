@@ -19,7 +19,7 @@ class Declaration(models.Model):
     order_num = models.IntegerField(verbose_name="Номер заказа", null=False, unique=True, blank=False)
     price_in_dollars = models.DecimalField(verbose_name="Стоимость в долларах", null=False, unique=False, blank=False,
                                            max_digits=9, decimal_places=3)
-    price_in_roubles = models.DecimalField(verbose_name="Стоимость в рублях", null=True, unique=True, blank=True,
+    price_in_roubles = models.DecimalField(verbose_name="Стоимость в рублях", null=True, unique=False, blank=True,
                                            max_digits=9, decimal_places=3)
     delivery_time = models.DateField(verbose_name="Срок поставки", null=True, blank=True)
 
