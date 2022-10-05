@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Declaration {% endblock %}
+
+{% block content %}
+    <table class="table table-sm table-light table-bordered table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Номер заказа</th>
+            <th scope="col">Стоимость, $</th>
+            <th scope="col">Стоимость, ₽</th>
+            <th scope="col">Срок поставки</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for row in rows %}
+            <tr>
+                <td>{{ row.order_num }}</td>
+                <td>{{ row.price_in_dollars }}</td>
+                <td>{{ row.price_in_roubles }}</td>
+                <td>{{ row.delivery_time }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="d-grid gap-2">
+        <a href="{% url 'update_table' %}" type="button" style="margin-bottom: 2%" class="btn btn-secondary">
+            Обновить данные
+        </a>
+    </div>
+{% endblock %}
